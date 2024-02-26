@@ -1,34 +1,35 @@
-:root{
-    --vermelho-1 : #ef4444;
-    --vermelho-2 : #dc2626;
-    --verde-1 : #10b981;
-    --verde-2 : #059669;
+:root {
+    --vermelho-1: #ef4444;
+    --vermelho-2: #dc2626;
+    --verde-1: #10b981;
+    --verde-2: #059669;
 }
 
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     list-style: none;
+    scroll-behavior: smooth;
 }
 
-body{
+body {
     background: #000;
     color: #fff;
 }
 
-a{
+a {
     text-decoration: none;
-    color:#fff;
+    color: #fff;
 }
 
-a:hover{
+a:hover {
     cursor: pointer;
     transition: color 0.3s ease-in-out;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,46 +38,46 @@ a:hover{
     row-gap: 2em;
 }
 
-h1{
+h1 {
     font-size: 4em;
     text-align: center;
     margin-bottom: 2em;
 }
 
-h2{
+h2 {
     font-size: 2.5em;
 }
 
-.paragrafo{
+.paragrafo {
     width: 50%;
     margin-inline: auto;
 }
 
-#sobre p{
+#sobre p {
     text-align: center;
 }
 
-#logo{
+#logo {
     width: 24em;
 }
 
 
-.italico{
+.italico {
     font-style: italic;
 }
 
-#foto-banda{
+#foto-banda {
     width: 34em;
 }
 
-.imagens{
+.imagens {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 4em;
 }
 
-.fa-brands{
+.fa-brands {
     font-size: 1.5em;
 }
 
@@ -85,51 +86,93 @@ h2{
     transition: color 0.3s ease-in-out;
 } */
 
-.fa-spotify{
+.fa-spotify {
     color: var(--verde-1);
 }
 
-.fa-spotify:hover{
+.fa-spotify:hover {
     color: var(--verde-2);
 }
 
-.fa-youtube{
+.fa-youtube {
     color: var(--vermelho-1);
 }
 
-.fa-youtube:hover{
+.fa-youtube:hover {
     color: var(--vermelho-2);
 }
 
-nav{
-    
+nav {
+
     font-weight: bolder;
     height: 4em;
     /* background: red; */
 }
 
-nav>ul{
+nav>ul {
     display: inline-flex;
     column-gap: 2em;
     justify-content: center;
 }
 
-header, nav{
+header,
+nav {
     display: flex;
     align-items: center;
 }
 
-header{
+header {
     padding-inline: 4em;
     justify-content: space-between;
 }
 
-.ancoras{
+.ancoras {
     border-right: solid 1px gray;
     margin-right: 2em;
     padding-right: 2em;
 }
 
-.ancoras *:hover{
+.ancoras *:hover {
     color: var(--vermelho-1);
+}
+
+#foto-turne {
+    width: 20rem;
+}
+
+#fim>div {
+    display: flex;
+
+}
+
+.disco-card>a{
+    display: flex;
+    flex-direction: column;
+    background: #171717;
+    border-radius: 0.25rem;
+    width: fit-content;
+    padding: 1rem;
+}
+
+.disco-card>a:hover{
+    background: #262626;
+    cursor: pointer;
+}
+
+.nome-disco {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.ano-disco {
+    font-weight: bold;
+    color: var(--vermelho-2);
+    margin-top: 1em;
+}
+
+#discos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
 }
