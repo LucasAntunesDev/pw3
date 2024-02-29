@@ -18,10 +18,10 @@
             <aside class="bg-zinc-100 border border-gray-300 flex flex-col gap-y-8 w-72 py-10 px-8 dark:bg-neutral-800
             dark:text-zinc-50 dark:border-neutral-700">
                 <p>Preencha o formulário ao lado com suas informações.</p>
-                <p>Seus dados não serão comartilhados</p>
+                <p>Seus dados não serão comartilhados com terceiros.</p>
             </aside>
 
-            <form action="" class="flex flex-col w-[-moz-available] w-[-webkit-fill-available] gap-y-2">
+            <form action="bem_vindo.php" class="flex flex-col w-[-moz-available] w-[-webkit-fill-available] gap-y-2" method="POST">
                 <div class="flex gap-x-8 gap-y-8">
                     <div class="flex flex-col justify-center w-[-webkit-fill-available] w-[-moz-available]">
                         <label for="nome" class="dark:text-zinc-50">Nome</label>
@@ -37,12 +37,14 @@
                 </div>
 
                 <label for="usuario" class="dark:text-zinc-50">Usuário</label>
-                <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário" class="rounded-md px-2 py-1 border border-gray-300 outline-none focus:ring focus:ring-blue-500 w-[-webkit-fill-available] w-[-moz-available] 
-                dark:bg-neutral-800 dark:border-none placeholder:text-neutral-600 pl-4 dark:placeholder:text-neutral-400">
+                <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuário"
+                    class="rounded-md px-2 py-1 border border-gray-300 outline-none focus:ring focus:ring-blue-500 w-[-webkit-fill-available] 
+                w-[-moz-available] dark:bg-neutral-800 dark:border-none placeholder:text-neutral-600 pl-4 dark:placeholder:text-neutral-400">
 
                 <label for="senha" class="dark:text-zinc-50">Senha</label>
-                <input type="text" id="senha" name="senha" placeholder="Digite sua senha" class="rounded-md px-2 py-1 border border-gray-300 outline-none focus:ring focus:ring-blue-500 w-[-webkit-fill-available] w-[-moz-available] 
-                dark:bg-neutral-800 dark:border-none placeholder:text-neutral-600 pl-4 dark:placeholder:text-neutral-400">
+                <input type="text" id="senha" name="senha" placeholder="Digite sua senha"
+                    class="rounded-md px-2 py-1 border border-gray-300 outline-none focus:ring focus:ring-blue-500 w-[-webkit-fill-available]
+                w-[-moz-available] dark:bg-neutral-800 dark:border-none placeholder:text-neutral-600 pl-4 dark:placeholder:text-neutral-400">
 
                 <button type="submit" class="bg-blue-600 rounded-md px-3 py-2 text-white 
             w-[-webkit-fill-available] w-[-moz-available] hover:bg-blue-700 focus:ring focus:ring-blue-300
