@@ -11,7 +11,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <title>Bem-vindo,
         <?php echo $_POST['nome'] . ' ';
-echo $_POST['sobrenome']; ?>
+        echo $_POST['sobrenome']; ?>
     </title>
 </head>
 

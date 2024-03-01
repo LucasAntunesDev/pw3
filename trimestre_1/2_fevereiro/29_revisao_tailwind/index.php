@@ -9,7 +9,7 @@
     <title>TailwindCSS</title>
 </head>
 
-<body class="h-[-webkit-fill-available] h-[-moz-available] dark:bg-neutral-900 dark:text-zinc-50">
+<body class="dark:bg-neutral-900 dark:text-zinc-50">
 
     <div class="flex flex-col h-screen w-6/12 mx-auto">
         <h1 class="font-bold text-4xl py-10 ">Exercício com TailwindCSS</h1>
@@ -18,11 +18,10 @@
             <aside class="bg-zinc-100 border border-gray-300 flex flex-col gap-y-8 w-72 py-10 px-10 dark:bg-neutral-800
              dark:border-neutral-700">
                 <p>Preencha o formulário ao lado com suas informações.</p>
-                <p>Seus dados não serão comartilhados com terceiros.</p>
+                <p>Seus dados não serão compartilhados com terceiros.</p>
             </aside>
 
-            <form action="" class="flex flex-col grow  gap-y-2"
-                method="POST">
+            <form action="" class="flex flex-col grow gap-y-2" method="POST">
                 <div class="flex gap-x-6 gap-y-8">
                     <div class="flex flex-col justify-center grow">
                         <label for="nome" class="">Nome</label>
