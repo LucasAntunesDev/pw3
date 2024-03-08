@@ -49,8 +49,13 @@ class Personagem
     public function atacar($inimigo) {
         $defesa = $inimigo->getDefesa();
         $rand = rand(1, 100);
-        $critico = $rand < $this->chanceCritico;
-        $vida = $inimigo->getVida() - ($this->ataque - $defesa);
+        $critico = $rand <= $this->chanceCritico;
+
+        $calculo_dano = !$critico ? $this->ataque - $defesa : $this->multiplicadorCritico - $defesa;
+
+        echo $rand . '<br>';
+
+        $vida = $inimigo->getVida() - $calculo_dano;
         $inimigo->setVida($vida);
     }
 
@@ -78,12 +83,15 @@ class Jogo
     }
 
     public function realizarTurno() {
-        if($this->jogadorAtual === 0) $this->jogadorAtual = 1;
-        else $this->jogadorAtual = 0;
+        if ($this->jogadorAtual === 0)
+            $this->jogadorAtual = 1;
+        else
+            $this->jogadorAtual = 0;
     }
 
     public function verificarVencedor($jogadorAtual) {
-        if(!$jogadorAtual->getVida() <= 0) return;
+        if (!$jogadorAtual->getVida() <= 0)
+            return;
     }
 
 }
@@ -100,12 +108,12 @@ $vencedor = null;
 $jogo->iniciarJogo();
 
 $heroi->atacar($monstro);
-echo 'vida do Monstro: '. $monstro->getVida();
+echo 'vida do Monstro: ' . $monstro->getVida();
 
 echo '<br>';
 
 $monstro->atacar($heroi);
-echo 'vida do herói: '. $heroi->getVida();
+echo 'vida do herói: ' . $heroi->getVida();
 
 // Loop do jogo
 // **while (!$vencedor) {
