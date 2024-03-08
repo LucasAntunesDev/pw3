@@ -51,11 +51,13 @@ class Personagem
         $rand = rand(1, 100);
         $critico = $rand <= $this->chanceCritico;
 
-        $calculo_dano = !$critico ? $this->ataque - $defesa : $this->multiplicadorCritico - $defesa;
+        $calculo_dano = !$critico ? $this->ataque - $defesa : 
+        ($this->ataque * $this->multiplicadorCritico) - $defesa;
 
-        echo $rand . '<br>';
-
+        // echo $rand . '<br>';
+        
         $vida = $inimigo->getVida() - $calculo_dano;
+        echo 'Vida: '. $vida . '<br>';
         $inimigo->setVida($vida);
     }
 
@@ -107,13 +109,15 @@ $vencedor = null;
 // Início do jogo
 $jogo->iniciarJogo();
 
-$heroi->atacar($monstro);
-echo 'vida do Monstro: ' . $monstro->getVida();
+$monstro->atacar($heroi);
+echo 'vida do herói: ' . $heroi->getVida();
+$jogo->realizarTurno();
 
 echo '<br>';
 
-$monstro->atacar($heroi);
-echo 'vida do herói: ' . $heroi->getVida();
+$heroi->atacar($monstro);
+echo 'vida do Monstro: ' . $monstro->getVida();
+$jogo->realizarTurno();
 
 // Loop do jogo
 // **while (!$vencedor) {
