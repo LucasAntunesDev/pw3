@@ -1,6 +1,7 @@
 <?php
 
-class Personagem {
+class Personagem
+{
 
     private $nome;
     private $vida;
@@ -10,43 +11,49 @@ class Personagem {
     private $multiplicadorCritico;
 
     public function __construct($nome, $vida, $ataque, $defesa, $chanceCritico, $multiplicadorCritico) {
-        // ...
+        $this->nome = $nome;
+        $this->vida = $vida;
+        $this->ataque = $ataque;
+        $this->defesa = $defesa;
+        $this->chanceCritico = $chanceCritico;
+        $this->multiplicadorCritico = $multiplicadorCritico;
     }
 
     public function getNome() {
-        // ...
+        return $this->nome;
     }
 
     public function getVida() {
-        // ...
+        return $this->vida;
     }
 
     public function setVida($vida) {
-        // ...
+        $this->vida = $vida;
     }
 
     public function getAtaque() {
-        // ...
+        return $this->ataque;
     }
 
     public function getDefesa() {
-        // ...
+        return $this->defesa;
     }
     public function getChanceCritico() {
-        // ...
+        return $this->chanceCritico;
     }
 
     public function getMultiplicadorCritico() {
-        // ...
+        return $this->multiplicadorCritico;
     }
 
     public function atacar($inimigo) {
-        // ...
+        // 
     }
 
 }
 
-class Jogo {
+class Jogo
+{
 
     private $personagens;
     private $jogadorAtual;
@@ -67,11 +74,15 @@ class Jogo {
     }
 
     public function realizarTurno() {
-        // ...
+        if($this->jogadorAtual === 0) $this->jogadorAtual = 1;
+        else $this->jogadorAtual = 0;
+        // return $this->jogadorAtual === 0 ? $this->jogadorAtual = 1 : $this->jogadorAtual = 1;
     }
 
     public function verificarVencedor() {
-        // ...
+        // foreach ($this->personagens as $personagem) {
+        //     if()
+        // }
     }
 
 }
@@ -88,10 +99,10 @@ $vencedor = null;
 $jogo->iniciarJogo();
 
 // Loop do jogo
-while (!$vencedor) {
-    $jogo->realizarTurno();
-    $vencedor = $jogo->verificarVencedor();
-}
+// **while (!$vencedor) {
+// **    $jogo->realizarTurno();
+// **    $vencedor = $jogo->verificarVencedor();
+// */ }
 
 // Exibição do vencedor
-echo "**{$vencedor->getNome()} venceu!**<br>";
+#echo "**{$vencedor->getNome()} venceu!**<br>";
