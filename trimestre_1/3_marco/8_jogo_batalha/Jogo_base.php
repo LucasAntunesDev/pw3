@@ -48,6 +48,8 @@ class Personagem
 
     public function atacar($inimigo) {
         $defesa = $inimigo->getDefesa();
+        $rand = rand(1, 100);
+        $critico = $rand < $this->chanceCritico;
         $vida = $inimigo->getVida() - ($this->ataque - $defesa);
         $inimigo->setVida($vida);
     }
