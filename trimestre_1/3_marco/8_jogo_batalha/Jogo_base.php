@@ -47,7 +47,9 @@ class Personagem
     }
 
     public function atacar($inimigo) {
-        // 
+        $vida = $inimigo->getVida() - $this->ataque;
+        $inimigo->setVida($vida);
+        // $vida -= $this->ataque;
     }
 
 }
@@ -76,7 +78,6 @@ class Jogo
     public function realizarTurno() {
         if($this->jogadorAtual === 0) $this->jogadorAtual = 1;
         else $this->jogadorAtual = 0;
-        // return $this->jogadorAtual === 0 ? $this->jogadorAtual = 1 : $this->jogadorAtual = 1;
     }
 
     public function verificarVencedor() {
@@ -97,6 +98,14 @@ $vencedor = null;
 
 // Início do jogo
 $jogo->iniciarJogo();
+
+$heroi->atacar($monstro);
+echo $monstro->getVida();
+
+echo '<br>';
+
+$monstro->atacar($heroi);
+echo $heroi->getVida();
 
 // Loop do jogo
 // **while (!$vencedor) {
