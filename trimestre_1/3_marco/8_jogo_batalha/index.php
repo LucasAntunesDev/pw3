@@ -18,29 +18,26 @@ $jogo->iniciarJogo();
 $jogador_atual = $jogo->getJogadorAtual() ? $monstro : $heroi;
 $inimigo = !$jogo->getJogadorAtual() ?  $monstro : $heroi;
 
-/*
-var_dump($jogador_atual);
-echo '<br>';
-var_dump($inimigo);
-echo '<br>';
-echo $jogo->getJogadorAtual();
-echo '<br>';
-*/
-
-echo '**Turno de ' . $jogador_atual->getNome(). '**<br>';
-echo $jogador_atual->getNome() . ' ataca '. $inimigo->getNome() .'<br>';
-$jogador_atual->atacar($inimigo);
-echo $inimigo->getNome() .': Vida '. $inimigo->getVida();
-$jogo->realizarTurno();
-
-echo '<br>';
-
 
 // Loop do jogo
-// **while (!$vencedor) {
-// **    $jogo->realizarTurno();
-// **    $vencedor = $jogo->verificarVencedor();
-// */ }
+echo "vencedor var_dump: ";
+var_dump($vencedor);
+echo "<br>";
+while (!$vencedor) {
+    $jogo->realizarTurno();
+    // $jogo->realizarTurno();
+    $vencedor = $jogo->verificarVencedor();
+    echo "vencedor var_dump: ";
+    var_dump($vencedor);
+    echo "<br>";
+}
+
+echo '<br>';
 
 // Exibição do vencedor
-#echo "**{$vencedor->getNome()} venceu!**<br>";
+if ($vencedor !== null) {
+    echo "**{$vencedor->getNome()} venceu com {$vencedor->getVida() }!**<br>";
+    // echo "**{$vencedor->getNome()} venceu!**<br>";
+} else {
+    echo "O jogo terminou sem vencedores.<br>";
+}

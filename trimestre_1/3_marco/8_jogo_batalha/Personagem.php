@@ -48,13 +48,24 @@ class Personagem
     }
 
     public function atacar($inimigo) {
+        $chance = mt_rand(1, 100);
+        if ($chance <= $this->getChanceCritico()) {
+            $dano = ($this->getAtaque() * $this->getMultiplicadorCritico()) - $inimigo->getDefesa();
+            echo "{$this->getNome()} fez um ataque crítico de $dano!<br>";
+        } else {
+            $dano = $this->getAtaque() - $inimigo->getDefesa();
+            echo "{$this->getNome()} atacou com $dano de dano.<br>";
+        }
+        $inimigo->setVida($inimigo->getVida() - $dano);
+        return;
         $defesa = $inimigo->getDefesa();
         $rand = rand(1, 100);
         $critico = $rand <= $this->chanceCritico;
+        $critico = 60;
 
         $calculo_dano = !$critico ? $this->ataque - $defesa : 
         ($this->ataque * $this->multiplicadorCritico) - $defesa;
-
+        echo $critico ? 'critico' : '';
         // echo $rand . '<br>';
         
         $vida = $inimigo->getVida() - $calculo_dano;
