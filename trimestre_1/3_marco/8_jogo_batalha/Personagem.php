@@ -54,6 +54,7 @@ class Personagem
 
         $calculo_dano = !$critico ? $this->ataque - $defesa : 
         ($this->ataque * $this->multiplicadorCritico) - $defesa;
+        
         echo $critico ? '**Ataque Crítico!**<br>' : '';
         
         $vida = $inimigo->getVida() - $calculo_dano;
