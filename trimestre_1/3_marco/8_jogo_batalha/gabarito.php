@@ -1,7 +1,6 @@
 <?php
 
-class Personagem
-{
+class Personagem {
 
     private $nome;
     private $vida;
@@ -47,17 +46,14 @@ class Personagem
     }
 
     public function atacar($inimigo) {
-        $defesa = $inimigo->getDefesa();
-        $rand = rand(1, 100);
-        $critico = $rand <= $this->chanceCritico;
+        $dano = $this->ataque - $inimigo->getDefesa();
 
-        $calculo_dano = !$critico ? $this->ataque - $defesa : 
-        ($this->ataque * $this->multiplicadorCritico) - $defesa;
+        if (rand(1, 100) <= $this->chanceCritico) {
+            $dano *= $this->multiplicadorCritico;
+            echo "**Ataque Crítico!** ";
+        }
 
-        if ($critico) '**Ataque Crítico!** ';
-        
-        $vida = $inimigo->getVida() - $calculo_dano;
-        $inimigo->setVida($vida);
+        $inimigo->setVida($inimigo->getVida() - $dano);
     }
 
 }
@@ -76,33 +72,41 @@ class Jogo {
         echo "**Início do Jogo!**<br>";
 
         foreach ($this->personagens as $personagem) {
-            echo "{$personagem->getNome()}: Vida {$personagem->getVida()}<br></br>";
+            echo "{$personagem->getNome()}: Vida {$personagem->getVida()}<br>";
         }
+
+        echo "<br>";
     }
 
     public function realizarTurno() {
-        $atacante = $this->personagens[$this->jogadorAtual];
-        $defensor = $this->personagens[($this->jogadorAtual + 1) % count($this->personagens)];
-        
-        echo "**Turno de {$atacante->getNome()} **<br>";
-        echo "{$atacante->getNome()} ataca {$defensor->getNome()} <br>";
-        $atacante->atacar($defensor);
-        
-        $this->jogadorAtual = ($this->jogadorAtual + 1) % count($this->personagens);
-        echo "{$defensor->getNome()} : Vida {$defensor->getVida()}<br></br>";
+        $personagemAtual = $this->personagens[$this->jogadorAtual];
+
+        echo "**Turno de {$personagemAtual->getNome()}**<br>";
+
+        $this->jogadorAtual = $this->jogadorAtual == 0 ? 1 : 0;
+
+        $alvo = $this->personagens[$this->jogadorAtual];
+
+        echo "{$personagemAtual->getNome()} ataca {$alvo->getNome()}!<br>";
+
+        $personagemAtual->atacar($alvo);
+
+        echo "{$alvo->getNome()}: Vida {$alvo->getVida()}<br>";
+
+        echo "<br>";
     }
 
     public function verificarVencedor() {
-        foreach ($this->personagens as $personagem)
-            if ($personagem->getVida() < 0) return $this->personagens[0] == $personagem ? $this->personagens[1]
-                :
-                $this->personagens[0];
+        if ($this->personagens[0]->getVida() <= 0) {
+            return $this->personagens[1];
+        }
+        else if ($this->personagens[1]->getVida() <= 0) {
+            return $this->personagens[0];
+        }
+
         return null;
     }
 
-    public function getJogadorAtual() {
-        return $this->jogadorAtual;
-    }
 }
 
 // Criação de personagens
