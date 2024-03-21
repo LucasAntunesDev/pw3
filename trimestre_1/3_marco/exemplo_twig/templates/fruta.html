@@ -1,10 +1,13 @@
-{# templates/fruta.html #}
+{% extends "base.html" %}
+{% block titulo %}Escolher fruta{% endblock %}
+{% block conteudo %}
 <h1>Escolha a sua fruta</h1>
 
 {% if frutaEscolhida %}
-<p>Você escolheu {{frutaEscolhida}}</p>
+	<p>Você escolheu
+		{{frutaEscolhida}}</p>
 {% else %}
-<p>Você ainda não escolheu.</p>
+	<p>Você ainda não escolheu.</p>
 {% endif %}
 
 <form action="#">
@@ -20,3 +23,4 @@
 	<button type="submit">Escolher!</button>
 
 </form>
+{% endblock %}
