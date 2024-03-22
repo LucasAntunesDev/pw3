@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block titulo %}Compras
+{% endblock %}
+{% block conteudo %}
+	<h3>Adicionar item</h3>
+	<form action="compras_adc.php" method="POST">
+		<input type="text" name="item">
+		<button type="submit">Adicionar</button>
+	</form>
+	<hr>
+
+	<p>Esta é sua lista de compras:</p>
+
+	<ul>
+		{% for compra in compras %}
+			<li>{{ compra.item }}</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

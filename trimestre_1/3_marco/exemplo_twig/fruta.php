@@ -18,5 +18,6 @@ $frutaEscolhida = $_GET['fruta'] ?? null;
 echo $twig->render('fruta.html', [
     'frutas' => $frutas,
     // Ou o resultado de $frutas[indice] ou null (caso não exista o índice ou tenha vindo com um índice nulo)
-    'frutaEscolhida' => $frutas[$frutaEscolhida] ?? null
+    'frutaEscolhida' => $frutas[$frutaEscolhida] ?? null,
+    'titulo' => 'Frutas'
 ]);
