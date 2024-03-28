@@ -13,7 +13,11 @@
 
 	<ul>
 		{% for compra in compras %}
-			<li>{{ compra.item }}</li>
+			<li>
+				{{ compra.item }} 
+				<a href="compras_edit.php?id={{ compra.id }}" class="edit-btn">Editar</a>
+				<a href="compras_remove.php?id={{ compra.id }}" class="delete-btn">Excluir</a>
+			</li>
 		{% endfor %}
 	</ul>
 {% endblock %}

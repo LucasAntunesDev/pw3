@@ -4,6 +4,8 @@
     --verde-400: #34d399;
     --verde-500: #10b981;
     --verde-700: #047857;
+    --vermelho-500: crimson;
+    --vermelho-700: #b91c1c;
 }
 
 * {
@@ -50,4 +52,39 @@ button:hover {
 .paragrafo-texto {
     width: 50%;
     margin: 0 auto;
+}
+
+.edit-btn,
+.delete-btn {
+    color: var(--branco);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.edit-btn {
+    background: var(--verde-500);
+}
+
+.delete-btn {
+    background: var(--vermelho-500);
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.edit-btn:hover {
+    background: var(--verde-700);
+}
+
+.delete-btn:hover {
+    background: var(--vermelho-700);
+}
+
+li {
+    margin-block: 1.5rem;
 }
