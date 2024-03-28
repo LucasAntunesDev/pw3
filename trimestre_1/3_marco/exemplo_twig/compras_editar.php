@@ -1,11 +1,16 @@
 <?php
 # compras_remove.php
 require('inc/banco.php');
+$id = $_POST['id'] ?? null;
 $item = $_POST['item'] ?? null;
 
+// var_dump($id);
+// var_dump($item);
+
 if ($item) {
-    $query = $pdo->prepare('UPDATE compras SET nome = :nome');
+    $query = $pdo->prepare('UPDATE compras SET item = :item WHERE id = :id');
     $query->bindValue(':id', $id);
+    $query->bindValue(':item', $item);
 
     $query->execute();
 }
