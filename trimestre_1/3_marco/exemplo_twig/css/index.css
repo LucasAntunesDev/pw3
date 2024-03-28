@@ -81,6 +81,9 @@ button:hover {
     background: var(--verde-700);
 }
 
+.delete-btn {
+    display: inline-flex;
+}
 .delete-btn:hover {
     background: var(--vermelho-700);
 }

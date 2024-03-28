@@ -1,13 +1,11 @@
 <?php
-# compras_remove.php
+# compras_remover.php
 require('inc/banco.php');
-$item = $_POST['item'] ?? null;
 
-if ($item) {
-    $query = $pdo->prepare('DELETE FROM compras WHERE id = :id');
-    $query->bindValue(':id', $id);
+$id = $_GET['id'] ?? null;
 
-    $query->execute();
-}
+$query = $pdo->prepare('DELETE FROM compras WHERE id = :id');
+$query->bindValue(':id', $id);
+$query->execute();
 
 header('location:compras.php');
