@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block titulo %}Compras
+{% endblock %}
+{% block conteudo %}
+<p>{{ teste }}</p>
+{# <p>{{ compra.item }}</p> #}
+	<form action="compras_editar.php" method="POST">
+		<input type="text" name="item" value="{{ compra.item }}">
+		<button type="submit">Adicionar</button>
+	</form>
+{% endblock %}
