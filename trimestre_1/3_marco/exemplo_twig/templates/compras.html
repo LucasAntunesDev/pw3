@@ -2,19 +2,20 @@
 {% block titulo %}Compras
 {% endblock %}
 {% block conteudo %}
-	<h3>Adicionar item</h3>
-	<form action="compras_adc.php" method="POST">
-		<input type="text" name="item">
-		<button type="submit">Adicionar</button>
-	</form>
-	<hr>
+	<div class="flex-row justify-center">
+		<h3>Adicionar item</h3>
+		<form action="compras_adc.php" method="POST">
+			<input type="text" name="item">
+			<button type="submit">Adicionar</button>
+		</form>
+	</div>
 
-	<p>Esta é sua lista de compras:</p>
+	<p id="titulo-lista-compras">Esta é sua lista de compras:</p>
 
-	<ul>
+	<ul class="lista">
 		{% for compra in compras %}
 			<li>
-				{{ compra.item }} 
+				{{ compra.item }}
 				<a href="compras_form.php?id={{ compra.id }}" class="edit-btn">Editar</a>
 				<a href="compras_remover.php?id={{ compra.id }}" class="delete-btn">Excluir</a>
 			</li>
