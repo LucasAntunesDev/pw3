@@ -1,15 +1,13 @@
 <?php
-# compras_remove.php
+# compras_editar.php
+require('twig_carregar.php');
 require('inc/banco.php');
-$id = $_POST['id'] ?? null;
-$item = $_POST['item'] ?? null;
 
-if ($item) {
-    $query = $pdo->prepare('UPDATE compras SET item = :item WHERE id = :id');
-    $query->bindValue(':id', $id);
-    $query->bindValue(':item', $item);
+$id = $_GET['id'] ?? null;
 
-    $query->execute();
-}
+$sql = $pdo->prepare('SELECT * FROM compras WHERE id = :id');
+$sql->bindValue(':id', $id);
+$sql->execute();
+$compra = $sql->fetch(PDO::FETCH_ASSOC);
 
-header('location:compras.php');
+echo $twig->render('compras_editar.html', ['compra' => $compra, 'titulo' => 'Editar Compras']);
