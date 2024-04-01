@@ -1,0 +1,164 @@
+:root {
+    --branco: #f1f5f9;
+    --slate-900: #0f172a;
+    --verde-400: #34d399;
+    --verde-500: #10b981;
+    --verde-700: #047857;
+    --vermelho-500: crimson;
+    --vermelho-700: #b91c1c;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body {
+    background: var(--slate-900);
+    color: var(--branco);
+}
+
+h1,
+h2 {
+    color: #0ea5e9;
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--branco);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background: var(--verde-500);
+    color: var(--branco);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+button:hover {
+    background: var(--verde-700);
+    cursor: pointer;
+}
+
+.paragrafo-texto {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.edit-btn,
+.delete-btn {
+    color: var(--branco);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.edit-btn {
+    background: var(--verde-500);
+}
+
+.delete-btn {
+    background: var(--vermelho-500);
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.edit-btn:hover {
+    background: var(--verde-700);
+}
+
+.delete-btn:hover {
+    background: var(--vermelho-700);
+}
+
+li {
+    margin-block: 1.5rem;
+    list-style-type: upper-roman;
+}
+
+ul.lista{
+    width: 50%;
+    margin-inline: auto;
+}
+
+#titulo-lista-compras{
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.flex-row{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+#header{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-left: 1rem;
+}
+
+#form_edicao{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: 4rem;
+}
+
+#form_edicao>input{
+    width: 14rem;
+}
+
+#form_edicao>.btn-acoes{
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-acoes>a:hover{
+    text-decoration: none;
+}
+
+input[type=text]{
+    border-radius: 0.5rem;
+    padding-inline: 0.5rem;
+    padding-block: 0.3rem;
+    border: solid 1px gray;
+    background: none;
+    color: var(--branco);
+}
+
+input[type=text]:focus{
+    outline: none;
+}
+
+h1 svg{
+    width: 2.5rem;
+}
+
+h1{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    width: fit-content;
+}

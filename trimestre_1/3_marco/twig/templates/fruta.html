@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block titulo %}Escolher fruta{% endblock %}
+{% block conteudo %}
+<h1>Escolha a sua fruta</h1>
+
+{% if frutaEscolhida %}
+	<p>Você escolheu
+		{{frutaEscolhida}}</p>
+{% else %}
+	<p>Você ainda não escolheu.</p>
+{% endif %}
+
+<form action="#">
+
+	<select name="fruta">
+		{% for indice, fruta in frutas %}
+			<option value="{{indice}}">
+				{{ fruta }}
+			</option>
+		{% endfor %}
+	</select>
+
+	<button type="submit">Escolher!</button>
+
+</form>
+{% endblock %}

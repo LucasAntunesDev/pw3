@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block titulo %}Compras
+{% endblock %}
+{% block conteudo %}
+	<p>{{ teste }}</p>
+	<form action="compras_editar.php" method="POST" id="form_edicao">
+		<input type="hidden" name="id" value="{{ compra.id }}">
+		<input type="text" name="item" value="{{ compra.item }}">
+		<div class="btn-acoes">
+			<a href="compras.php">Voltar</a>
+			<button type="submit">Salvar</button>
+		</div>
+	</form>
+{% endblock %}
